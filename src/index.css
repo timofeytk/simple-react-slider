@@ -1,13 +1,59 @@
-body {
+html, body{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+.slider{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.slide{
+  min-width: 100%;
+  height: 80%;
+  overflow: hidden;
+}
+.to-left{
+  position: absolute;
+  height: 80%;
+  width: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255,255,255,.2);
+  cursor: pointer;
+  z-index: 10;
+  transition: .25s;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.to-right{
+  position: absolute;
+  height: 80%;
+  width: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255,255,255,.2);
+  cursor: pointer;
+  z-index: 10;
+  transition: .25s;
+}
+.to-left:hover, .to-right:hover{
+  background-color: rgba(255,255,255,.5);
+}
+.to-left svg, .to-right svg{
+  position: absolute;
+  display: block;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
 }
